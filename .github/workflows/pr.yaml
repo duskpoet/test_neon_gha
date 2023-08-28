@@ -1,0 +1,19 @@
+name: Test Neon GHa
+
+on:
+  pull_request
+
+jobs:
+  test_migration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: neondatabase/create-branch-action@v4
+        id: create-branch
+        with:
+          project_id: ${{ secrets.NEON_PROJECT_ID }}
+          branch_name: test_branch
+          api_key: ${{ secrets.NEON_API_KEY }}
+          username: ${{ secrets.NEON_USERNAME }}
+          prisma: true
+
+      - run: echo "DATABASE_URL=${{ steps.create-branch.outputs.db_url }}"
