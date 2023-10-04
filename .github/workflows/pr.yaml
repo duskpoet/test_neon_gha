@@ -25,3 +25,5 @@ jobs:
           branch: test_branch
           api_key: ${{ secrets.NEON_API_KEY }}
 
+      - run: echo "BRANCH_ID=${{ steps.create-branch.outputs.branch_id }}"
+
