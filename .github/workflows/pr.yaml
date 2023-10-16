@@ -6,6 +6,8 @@ on:
 jobs:
   test_migration:
     runs-on: ubuntu-latest
+    env:
+      DEBUG: axios
     steps:
       - uses: neondatabase/create-branch-action@v4
         id: create-branch
