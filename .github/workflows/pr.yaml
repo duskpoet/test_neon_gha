@@ -18,7 +18,7 @@ jobs:
 
       - run: echo "DATABASE_URL=${{ steps.create-branch.outputs.db_url }}"
 
-      - uses: neondatabase/delete-branch-action@eduard/change_yarn_to_npm
+      - uses: neondatabase/delete-branch-action@v3
         id: delete-branch
         with:
           project_id: ${{ secrets.NEON_PROJECT_ID }}
