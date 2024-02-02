@@ -19,7 +19,7 @@ jobs:
       - run: echo "DATABASE_URL=${{ steps.create-branch.outputs.db_url }}"
       - run: echo "PASSWORD=${{ steps.create-branch.outputs.password }}"
 
-      - uses: neondatabase/delete-branch-action@v3
+      - uses: neondatabase/delete-branch-action@fix-branches-with-hash
         id: delete-branch
         with:
           project_id: ${{ secrets.NEON_PROJECT_ID }}
