@@ -7,7 +7,7 @@ jobs:
   test_migration:
     runs-on: ubuntu-latest
     steps:
-      - uses: neondatabase/create-branch-action@40-creation-of-a-branch-with-a-name-starting-with-results-in-error-name-cannot-be-empty
+      - uses: neondatabase/create-branch-action@v4.4.1
         id: create-branch
         with:
           project_id: ${{ secrets.NEON_PROJECT_ID }}
@@ -19,7 +19,7 @@ jobs:
       - run: echo "DATABASE_URL=${{ steps.create-branch.outputs.db_url }}"
       - run: echo "PASSWORD=${{ steps.create-branch.outputs.password }}"
 
-      - uses: neondatabase/delete-branch-action@fix-branches-with-hash
+      - uses: neondatabase/delete-branch-action@v3
         id: delete-branch
         with:
           project_id: ${{ secrets.NEON_PROJECT_ID }}
