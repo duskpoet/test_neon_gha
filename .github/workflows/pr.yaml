@@ -14,6 +14,7 @@ jobs:
           branch_name: "#test_branch"
           api_key: ${{ secrets.NEON_API_KEY }}
           username: ${{ secrets.NEON_USERNAME }}
+          ssl: "verify-full"
 
       - run: echo "DATABASE_URL=${{ steps.create-branch.outputs.db_url }}"
       - run: echo "PASSWORD=${{ steps.create-branch.outputs.password }}"
