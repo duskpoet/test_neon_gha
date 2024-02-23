@@ -7,14 +7,13 @@ jobs:
   test_migration:
     runs-on: ubuntu-latest
     steps:
-      - uses: neondatabase/create-branch-action@v4
+      - uses: neondatabase/create-branch-action@eduard/append_sslmode_to_cs
         id: create-branch
         with:
           project_id: ${{ secrets.NEON_PROJECT_ID }}
           branch_name: "#test_branch"
           api_key: ${{ secrets.NEON_API_KEY }}
           username: ${{ secrets.NEON_USERNAME }}
-          prisma: true
 
       - run: echo "DATABASE_URL=${{ steps.create-branch.outputs.db_url }}"
       - run: echo "PASSWORD=${{ steps.create-branch.outputs.password }}"
