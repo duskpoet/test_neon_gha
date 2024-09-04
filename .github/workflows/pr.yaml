@@ -7,7 +7,7 @@ jobs:
   test_migration:
     runs-on: ubuntu-latest
     steps:
-      - uses: neondatabase/create-branch-action@eduard/cache_npm
+      - uses: neondatabase/create-branch-action@v5
         id: create-branch
         with:
           project_id: ${{ secrets.NEON_PROJECT_ID }}
